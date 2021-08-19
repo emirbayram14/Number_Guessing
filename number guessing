@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.util.Random;
+class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+    Random num = new Random();
+    int random = num.nextInt(100)+0;
+    System.out.println("Guess the number between 0 and 100");
+    int guessed = sc.nextInt();
+    while (guessed !=random){
+      if(guessed < random){
+        System.out.println("Enter a bigger number:");
+        guessed=sc.nextInt();
+      }
+      else if(guessed > random){
+      System.out.println("Enter a smaller number:");
+      guessed=sc.nextInt();
+    }
+      else{
+        System.out.println("You enter an incorrect value. Please enter a number between 0 and 100");
+        guessed = sc.nextInt();
+      }
+    }
+  
+    System.out.println("Very good, I guessed this number");
+    }
+}
